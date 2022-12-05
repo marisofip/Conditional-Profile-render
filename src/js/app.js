@@ -1,3 +1,4 @@
+import { name } from "file-loader";
 import "../style/index.css";
 
 /**
@@ -29,13 +30,19 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let nombre = variables.name === null ? "Lucy " : variables.name;
+  let apellido = variables.lastname === null ? " Boilett " : variables.lastname;
+  let rol = variables.role === null ? " Web developer " : variables.role;
+  /*let pais = variables.country === null ? " USA " : variables.country;
+  let ciudad = variables.city === null ? " Miami " : variables.city; ${ciudad} ${pais}*/
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1> ${nombre} ${apellido} </h1>
+          <h2> ${rol} </h2>
+          <h3> Miami, USA </h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
