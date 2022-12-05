@@ -35,6 +35,15 @@ function render(variables = {}) {
   let rol = variables.role === null ? " Web developer " : variables.role;
   let pais = variables.country === null ? " USA " : variables.country;
   let ciudad = variables.city === null ? " Miami " : variables.city;
+  let usuariot =
+    variables.twitter === null ? "4geeksacademy " : variables.twitter;
+  let usuariog =
+    variables.github === null ? "4geeksacademy " : variables.github;
+  let usuariol =
+    variables.linkedin === null ? "4geeksacademy " : variables.linkedin;
+  let usuarioI =
+    variables.instagram === null ? "4geeksacademy " : variables.instagram;
+  //*let sociales = variables.socialMediaPosition*//
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -43,11 +52,11 @@ function render(variables = {}) {
           <h1> ${nombre} ${apellido} </h1>
           <h2> ${rol} </h2>
           <h3> ${ciudad} ${pais} </h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy" target=”_blank”><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy" target=”_blank”><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy" target=”_blank”><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy" target=”_blank”><i class="fab fa-instagram"></i></a></li>
+          <ul class=" ${variables.socialMediaPosition}">
+            <li> <a href="https://twitter.com/${usuariot}" target=”_blank”><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${usuariog}" target=”_blank”><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${usuariol}" target=”_blank”><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${usuarioI}" target=”_blank”><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
